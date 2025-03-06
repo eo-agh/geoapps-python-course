@@ -25,9 +25,15 @@ Aby zaliczyć kurs, uczestnicy muszą:
 3. Dodać dokumentację projektu w **MkDocs**,
 4. Przedstawić działający projekt na ostatnich zajęciach.
 
+## 🚀 Projekty
+
+- Tematy projektów zostaną podane w późniejszym terminie,
+- Projekty będą realizowane w grupach **2 lub 3** osobowych,
+- Jeśli ktoś ma własny pomysł na projekt, można go zrealizować w ramach tych zajęć.
+
 ## 🛠️ Wymagania
 
-- Znajomość podstaw **Python, GIS oraz git**,
+- Znajomość podstaw **Python, GIS i git**,
 - Konto na **GitHub**,
 - Umiejętność pracy z **terminalem** i **docker**.
 

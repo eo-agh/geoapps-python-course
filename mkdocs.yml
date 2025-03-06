@@ -1,6 +1,6 @@
 site_name: Programowanie aplikacji geoinformatycznych (Python)
 docs_dir: docs
-repo_url: https://eo-agh.github.io/eo-course/geoapps-python-course
+repo_url: https://eo-agh.github.io/geoapps-python-course
 
 copyright: Copyright 2024 Jakub Staszel KGiIS AGH
 
@@ -39,3 +39,4 @@ markdown_extensions:
 
 nav:
   - Strona główna: index.md
+  - Środowisko lokalne: zaj0/srod-lok.md

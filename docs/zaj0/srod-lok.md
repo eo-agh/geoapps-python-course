@@ -33,8 +33,6 @@ FROM condaforge/mambaforge:latest
 
 WORKDIR /app
 
-RUN echo "source /opt/conda/etc/profile.d/conda.sh && conda activate base" >> ~/.bashrc
-
 CMD ["/bin/bash", "-l"]
 ```
 

@@ -1,4 +1,4 @@
-# 📌 **Zajęcia nr 1 - Środowisko lokalne do pracy z Pythonem w Dockerze**
+# 📌 **Środowisko lokalne do pracy z Pythonem w Dockerze**
 
 ## 🏁 1. Wprowadzenie
 Na tych zajęciach skonfigurujemy środowisko do pracy z Pythonem w kontenerze **Docker**. Dzięki temu każdy będzie miał **spójne, odizolowane środowisko**, w którym można instalować pakiety, uruchamiać skrypty i pracować z Pythonem **interaktywnie z poziomu IDE**.

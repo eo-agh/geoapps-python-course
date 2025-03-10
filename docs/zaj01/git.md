@@ -1,10 +1,10 @@
 W tym module poznasz podstawowe informacje o systemie kontroli wersji git oraz nauczysz się, jak połączyć się z repozytorium zdalnym. Omówimy instalację gita, konfigurację użytkownika, klonowanie repozytorium oraz wysyłanie i pobieranie zmian.
 
-## Czym jest Git?
+## Czym jest git?
 
 Git to rozproszony system kontroli wersji, który umożliwia śledzenie zmian w plikach, współpracę między programistami i zarządzanie kodem źródłowym w sposób efektywny i bezpieczny. Jest szeroko stosowany w projektach open-source oraz w firmach na całym świecie.
 
-### Kluczowe cechy GITa
+### Kluczowe cechy gita
 - **Rozproszony system** – każdy użytkownik ma pełną kopię repozytorium,
 - **Wersjonowanie** – śledzenie zmian i możliwość powrotu do wcześniejszych wersji kodu,
 - **Gałęzie (branches)** – możliwość pracy nad różnymi wersjami kodu równocześnie,
@@ -134,7 +134,7 @@ Teraz masz podstawową wiedzę na temat gita i połączenia się z repozytorium 
 ???- tip "Revert i Reset"
     ## Wycofywanie zmian
 
-    Błędy zdarzają się każdemu. Dlatego Git oferuje kilka metod na ich cofnięcie.
+    Błędy zdarzają się każdemu. Dlatego git oferuje kilka metod na ich cofnięcie.
 
     **Cofnięcie ostatniego commita**:
     ```sh
@@ -236,7 +236,7 @@ Teraz masz podstawową wiedzę na temat gita i połączenia się z repozytorium 
     choco install git-lfs
     ```
 
-    **Używanie Git LFS**:
+    **Używanie git LFS**:
     ```sh
     git lfs install
     ```
@@ -244,6 +244,6 @@ Teraz masz podstawową wiedzę na temat gita i połączenia się z repozytorium 
     ```sh
     git lfs track "*.psd"
     ```
-    To oznacza, że pliki `.psd` będą przechowywane w Git LFS zamiast w standardowym repozytorium Gita.
+    To oznacza, że pliki `.psd` będą przechowywane w git LFS zamiast w standardowym repozytorium gita.
 
     Dzięki temu repozytorium pozostaje lekkie, a duże pliki są przechowywane w zoptymalizowany sposób.

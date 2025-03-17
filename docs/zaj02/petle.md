@@ -49,21 +49,6 @@ for i in range(0, len(liczby), 2):
 print(liczby[::2])
 ```
 
-## Listy składane
-
-Lista składana to wyrażenie, które pozwala na tworzenie nowych list w zwięzły sposób, zwykle z użyciem pętli.
-
-```python
-kwadraty = [x ** 2 for x in range(6)]
-print(kwadraty)
-```
-
-```python
-liczby = [1, 2, 3, 4, 5, 6]
-parzystosc = ['parzysta' if liczba % 2 == 0 else 'nieparzysta' for liczba in liczby]
-print(parzystosc)
-```
-
 ## Przechodzenie równoległe
 
 `zip` umożliwia równoległe iterowanie po wielu sekwencjach, a `map` stosuje funkcję do każdego elementu sekwencji.
@@ -89,29 +74,3 @@ print(kwadraty)
 1. Mając dwie listy, `imiona = ['Anna', 'Jan', 'Ewa']` i `oceny = [5, 4, 3]`, użyj `zip` do stworzenia pary każdego imienia z odpowiadającą mu oceną. Następnie, iteruj przez te pary, wyświetlając imię wraz z oceną. Co się stanie, jeśli listy będą miały różne długości?
 
 2. Mając listę `liczby = [1, 2, 3, 4, 5]`, napisz funkcję `kwadrat(x)`, która zwraca kwadrat liczby x. Użyj map z tą funkcją, aby stworzyć nową listę, w której każdy element jest kwadratem odpowiadającego mu elementu z listy liczby. Wyświetl tą listę.
-
-## Iteratory
-
-Iterator to obiekt w Pythonie, który pozwala na sekwencyjne przetwarzanie elementów kolekcji (np. list, krotek, zbiorów) **bez załadowania całej struktury do pamięci**. Iteratory umożliwiają przechodzenie po elementach jeden po drugim, co jest efektywne, szczególnie przy pracy z dużymi zbiorami danych.
-
-Każda pętla `for` działa na iteratorach w tle.
-
-??? - note "Jak działają iteratory?"
-    - Każdy obiekt, który ma metodę `__iter__()` i `__next__()`, jest iteratorem.
-    - Metoda `__iter__()` zwraca iterator, a `__next__()` zwraca kolejny element. Gdy elementów zabraknie, zgłaszany jest wyjątek `StopIteration`.
-
-??? - note "Po co nam iteratory?"
-    - Efektywność pamięciowa: Przetwarzają elementy na bieżąco, nie muszą trzymać całej kolekcji w pamięci.
-    - Niekończące się sekwencje: Można tworzyć iteratory, które generują nieskończone sekwencje danych, np. liczby losowe.
-
-```python
-liczby = [1, 2, 3]
-it = iter(liczby)
-print(next(it))
-print(next(it))
-print(next(it))
-```
-
-## 📝 Zadanie dodatkowe
-
-Stwórz własny iterator (klasę) `FibonacciIterator(max_elements)`, który generuje ciąg liczb Fibonacciego. Ciąg Fibonacciego to sekwencja, w której każda kolejna liczba jest sumą dwóch poprzednich, a zaczyna się od 0 i 1.

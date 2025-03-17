@@ -7,6 +7,7 @@ copyright: Copyright 2024 Jakub Staszel KGiIS AGH
 theme:
   name: material
   features:
+    - navigation.sections
     - content.code.copy
   palette:
     - media: "(prefers-color-scheme)"
@@ -41,20 +42,22 @@ markdown_extensions:
 
 nav:
   - Strona główna: index.md
-  - 👽 Środowisko lokalne: zaj0/srod-lok.md
-  - 🌞 GIT - kontrola wersji: zaj01/git.md
-  - 🌞 Moduły i przestrzenie nazw: zaj01/moduly_przestrzenie.md
-  - 🌞 Podstawowe typy wbudowane: zaj01/typy_wbudowane.md
-  - 🌞 Niespodziewane zachowania: zaj01/niespodziewane.md
-  - 🌞 Instrukcje warunkowe i pętle: zaj01/instrukcje_petle.md
-  - 🌞 Praca z plikami: zaj01/praca_z_plikami.md
-  - 🌞📝 Zadanie sprawdzające: zaj01/zadania_sprawdzajace.md
-  - ❄️ Przypisania: zaj02/przypisania.md
-  - ❄️ Pętle: 
-    - Wstęp: zaj02/petle.md
-    - Listy składane: zaj02/petle/#listy-skadane
-    - Iteratory: zaj02/petle/#iteratory
-  - ❄️ Funkcje:
-    - Wstęp: zaj02/funkcje.md
-    - Funkcje anonimowe - lambda: zaj02/funkcje/#funkcje-anonimowe-lambda
-    - Generatory: zaj02/funkcje/#generatory
+  - Podstawy programowania:
+    - 👽 Środowisko lokalne: zaj0/srod-lok.md
+    - 🌞 GIT - kontrola wersji: zaj01/git.md
+  - Podstawy Pythona:
+    - 🌞 Moduły i przestrzenie nazw: zaj01/moduly_przestrzenie.md
+    - 🌞 Podstawowe typy wbudowane: zaj01/typy_wbudowane.md
+    - 🌞 Niespodziewane zachowania: zaj01/niespodziewane.md
+    - 🌞 Instrukcje warunkowe i pętle: zaj01/instrukcje_petle.md
+    - 🌞 Praca z plikami: zaj01/praca_z_plikami.md
+    - 🌞📝 Zadanie sprawdzające: zaj01/zadania_sprawdzajace.md
+    - ❄️ Przypisania: zaj02/przypisania.md
+  - Pętle:
+    - ❄️ Wstęp - pętle: zaj02/petle.md
+    - ❄️ Listy składane: zaj02/listy_skladane.md
+    - ❄️ Iteratory: zaj02/iteratory.md
+  - Funkcje:
+    - ❄️ Wstęp - funkcje: zaj02/funkcje.md
+    - ❄️ Funkcje anonimowe - lambda: zaj02/lambda.md
+    - ❄️ Generatory: zaj02/generatory.md

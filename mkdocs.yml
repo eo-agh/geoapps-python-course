@@ -6,6 +6,8 @@ copyright: Copyright 2024 Jakub Staszel KGiIS AGH
 
 theme:
   name: material
+  features:
+    - navigation.instant
   palette:
     - media: "(prefers-color-scheme)"
       toggle:
@@ -48,5 +50,11 @@ nav:
   - 🌞 Praca z plikami: zaj01/praca_z_plikami.md
   - 🌞📝 Zadanie sprawdzające: zaj01/zadania_sprawdzajace.md
   - ❄️ Przypisania: zaj02/przypisania.md
-  - ❄️ Pętle: zaj02/petle.md
-  - ❄️ Funkcje: zaj02/funkcje.md
+  - ❄️ Pętle: 
+    - Wstęp: zaj02/petle.md
+    - Listy składane: zaj02/petle/#listy-skadane
+    - Iteratory: zaj02/petle/#iteratory
+  - ❄️ Funkcje:
+    - Wstęp: zaj02/funkcje.md
+    - Funkcje anonimowe - lambda: zaj02/funkcje/#funkcje-anonimowe-lambda
+    - Generatory: zaj02/funkcje/#generatory

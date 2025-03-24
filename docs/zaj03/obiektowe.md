@@ -458,7 +458,7 @@ print(Kalkulator.odejmij(10, 4))  # 6
 
 ### Zadanie
 
-Zapoznaj się z metodami w klasie z `src.zajecia04.fleet.ambulance`.
+Zapoznaj się z metodami w klasie z `geoapps.zajecia03.fleet.ambulance`.
 
 ## Zadania
 

@@ -11,7 +11,7 @@ class Driver(Employee):
     def display_info(self):
         return f"Driver ID: {self.employee_id}, Name: {self.first_name} {self.last_name}, Salary: {self.salary}, License Number: {self.license_number}, Qualifications: {', '.join(self.qualifications)}"
 
-# Uruchomienie tego kodu: python -m src.zajecia04.personnel.driver
+# Uruchomienie tego kodu: python -m geoapps.zajecia03.personnel.driver
 if __name__ == "__main__":
     driver1 = Driver("Jane", "Smith", 1, 12000.00, "LIC1001", ["BLS"])
     print(driver1.display_info())

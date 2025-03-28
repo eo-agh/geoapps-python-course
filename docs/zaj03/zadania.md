@@ -1,4 +1,4 @@
-Dodaj następujące funkcjonalności do programu przedstawionego jako przykład. Dla wszystkich dodanych funkcjonalności stwórz przykładowy kod potwierdzający, że działają (rozbudowując kod w `run_zajecia04.py`).
+Dodaj następujące funkcjonalności do programu przedstawionego jako przykład. Dla wszystkich dodanych funkcjonalności stwórz przykładowy kod potwierdzający, że działają (rozbudowując kod w `main_zajecia03.py`).
 
 1. Zmodyfikuj każdą klasę tak, żeby posiadała atrybut `__max_id`, który będzie wykorzystywany do nadawania identyfikatorów kolejnym stworzonym instancjom (zamiast podawania go jako argument przy inicjalizacji).
 

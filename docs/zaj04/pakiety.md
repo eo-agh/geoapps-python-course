@@ -71,7 +71,7 @@ Mamy 2 główne typy importu:
 
 ??? - "Przykład - importowanie bezwzględne"
     ```python
-    from zajecia01 import dodawanie, odejmowanie
+    from geoapps.zajecia01 import dodawanie, odejmowanie
 
     print(dodawanie.dodaj(5, 3))  # Użycie funkcji dodaj z modułu dodawanie
     print(odejmowanie.odejmij(5, 3))  # Użycie funkcji odejmij z modułu odejmowanie
@@ -302,3 +302,13 @@ pip install https://github.com/eo-agh/geoapps-python-course/releases/download/v0
 ```
 
 Oraz odpowiednio innych dla PyPI czy conda-forge (w zależności od tego gdzie publikujemy pakiet).
+
+## 📝 Zadania
+
+1. Stwórz w głównym katalogu projektu plik `pyproject.toml` i wypełnij go odpowiednią treścią używając dokumentacji i przykładu konfiguracji.
+2. Zainstaluj swój zdefiniowany pakiet w trybie edytowalnym (`pip install -e .`).
+3. Opublikuj pierwszą wersję pakietu w GitHub Packages w sposób zautomatyzowany.
+
+???+ warning "Uwaga"
+
+    Po zainstalowaniu pakietu w wersji edytowalnej powinniśmy mieć możliwość importowania za pomocą `from geoapps import *` w sposób bezwzględny, czyli bez względu na lokalizację skryptu. Można to przetestować przenosząć tymczasowo `main_zajecia03.py` do folderu `tests`.

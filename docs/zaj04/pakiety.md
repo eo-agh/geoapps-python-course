@@ -138,7 +138,7 @@ exclude = ["docs", "tests"]
 
 ## Instalacja pakietu w trybie edytowalnym
 
-Żeby mieć możliwość pracy na lokalnym pakiecie (ale już wersji zdefiniowanej w `pyproject.toml`), wystarczy zainstalować pakiety w trybie edytowalnym za pomocą `pip install -e .` w terminalu. Tworzone zmiany będą widoczne od razu w Pythonie bez konieczności reinstalacji pakietu.
+Żeby mieć możliwość pracy na lokalnym pakiecie (ale już wersji zdefiniowanej w `pyproject.toml` oraz bez uzależnienia od `sys.path`), wystarczy zainstalować pakiet w trybie edytowalnym za pomocą `pip install -e .` w terminalu. Tworzone zmiany będą widoczne od razu w Pythonie bez konieczności reinstalacji pakietu.
 
 ???+ danger "To nie jest jedyna dopuszczalna struktura projektu!"
 
@@ -201,7 +201,7 @@ Budowanie pakietu to process tworzenia dystrybucji kodu, która może być zains
 
 Aby zbudować pakiet wystarczy mieć zainstalowany pakiet `build` ([dokumentacja](https://build.pypa.io/en/stable/)), a następnie uruchomić go poprzez `python -m build`.
 
-!!! warning "Paczka zbudowana zostanie w wersji zgodnej z `pyproject.toml`, należy ją wcześniej zaktualizować!"
+!!! warning "Paczka zbudowana zostanie w wersji zgodnej z `pyproject.toml`, należy najpierw zaktualizować ten plik!"
 
 ```python
 pip install build
@@ -263,20 +263,42 @@ Instalacja dostępnego tam pakietu: w zależności od konfiguracji `pip install`
 
 ## Publikowanie pakietu
 
-Pracujemy już z GitHub, więc tam opublikujemy zbudowaną wcześniej paczkę (jako przykład).
+Na przykładzie GitHub. Zakładając, że wszystkie nasze zmiany, które mają być częścią opublikowanej wersji są już na głównej gałęzi, pozostaje nam dodanie taga:
+
+```bash
+# tagi chcemy dodawać na głównej gałęzi
+git checkout main
+git pull origin main
+
+# dodanie taga zgodnego z wersją w pyproject.toml
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+???- question "Czym są `git tags`?"
+
+    Git tagi to specjalne "etykiety" przypinane do konkretnych commitów, najczęściej służące do oznaczania wersji projektu (np. v1.0.0, v2.1.3). W odróżnieniu od branchy, tagi są niezmienne – raz przypisane do commita, pozostają z nim związane na stałe (chyba że zostaną usunięte i utworzone ponownie). Tagi są kluczowe w cyklu wydawniczym: pozwalają budować i publikować wersje paczek, tworzyć release’y na GitHubie, a także odtwarzać stan repozytorium z momentu konkretnego wydania. Oprócz wersjonowania, tagów można używać również do: oznaczania ważnych punktów w historii (np. "pierwsza wersja prototypu"), tworzenia snapshotów do analizy, czy wskazywania milestone’ów w pracy zespołowej. Są lekkie, czytelne i dobrze wspierane przez narzędzia CI/CD.
 
 ### Manualnie
 
-!!! danger "Proszę nie uruchamiać tych komend, poniżej przedstawione jest automatyczne podejście, które zastosujemy!"
+!!! danger "Tego nie robimy, wykonamy zautomatyzowaną wersję!"
 
-```bash
-git commit -m "Release v0.2.0"
-git tag v0.2.0
-git push origin main --tags
-```
-
-Po tym możemy także stworzyć release w GitHub UI, poprzez zakładkę Releases.
+Opublikować pakiety możemy za pomocą release w GitHub UI, poprzez zakładkę Releases. To narzędzie zadba o zbudowanie plików dla paczki.
 
 ### Automatycznie
 
-Chcemy, żeby każdy PR do głównej gałęzi budował pakiet i publikował jego artefakty do pobrania. Zrobimy to za pomocą GitHub Actions, szczegóły można zobaczyć w pliku `./.github/workflows/build.yml`.
+Za pomocą workflow w GitHub Actions `./.github/workflows/release.yml` wykonujemy wszystkie kroki, czyli zbudowanie pakietu oraz opublikowanie.
+
+Po tym, po wejściu na repozytorium zdalne, powinniśmy widzieć status workflow oraz gotowy release.
+
+![Informacje o workflow i release](../assets/images/release.png)
+
+## Wykorzystanie pakietu
+
+Teraz inni użytkownicy będą mogli korzystać z konkretnych wersji pakietu. W przypadku GitHub, za pomocą komendy:
+
+```bash
+pip install https://github.com/eo-agh/geoapps-python-course/releases/download/v0.1.0/geoapps-0.1.0-py3-none-any.whl
+```
+
+Oraz odpowiednio innych dla PyPI czy conda-forge (w zależności od tego gdzie publikujemy pakiet).

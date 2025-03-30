@@ -17,6 +17,8 @@ import sys
 print(sys.path)
 ```
 
+# Przygotowanie struktury projektu
+
 ## Wprowadzenie do pakietów
 
 Pakiet w Pythonie to katalog (**folder**) zawierający moduły. Pakiety pozwalają na hierarchiczne organizowanie kodu, co jest szczególnie użyteczne w większych projektach. **Każdy pakiet jest katalogiem**, który powinien zawierać plik **`__init__.py`**, aby Python mógł go rozpoznać jako pakiet.
@@ -95,4 +97,186 @@ Mamy 2 główne typy importu:
     !!! tip
         Nie zapomnij dodać plików `__init__.py` wewnątrz pakietów, a także opcjonalnie list `__all__` w tych plikach.
 
-1. Wykorzystując pakiet `geoapps`, stwórz w głównym katalogu plik `run_geoapps.py`, zaimportuj do niego wybrane funkcje / klasy i wywołaj przykładowy kod z ich użyciem.
+2. Wykorzystując pakiet `geoapps`, stwórz w głównym katalogu plik `run_geoapps.py`, zaimportuj do niego wybrane funkcje / klasy i wywołaj przykładowy kod z ich użyciem.
+
+# Budowanie pakietu
+
+## Plik konfiguracyjny `pyproject.toml`
+
+Plik `pyproject.toml` to centralne miejsce konfiguracji pakietu. Od 2020 roku jest to zalecany (i standardowy) format dla wszystkich narzędzi do budowania pakietów (zgodnie z PEP 517/518/621). Pozwala narzędziom jak `pip`, `build`, `twine` itp. rozpoznać, jak zbudować i zainstalować pakiet.
+
+??? - note "Czy można używać czegoś innego niż `pyproject.toml`?"
+
+    Tradycyjnie używano pliku `setup.py`, a następnie dodano `setup.cfg` jako opcję konfiguracji bezpośredniej w formacie `.ini`. Obecnie, możliwa jest konfiguracja pakietów wyłącznie za pomocą `pyproject.toml`, który upraszcza zarządzanie projektami w całym ekosystemie.
+
+    W najnowszych wersjach `setuptools` wystarczy plik `pyproject.toml`, w poprzednich mogą być wymagane inne / pozostałe.
+
+    Więcej szczegółów w dokumentacji [setuptools](https://setuptools.pypa.io/en/latest/index.html).
+
+Plik `pyproject.toml` powinien się znaleźć w głównym katalogu projektu.
+
+**Zawartość `pyproject.toml`** - przechowuje szczegółowe informacje o projekcie, takie jak nazwa, wersja, autor oraz wymagania dla systemu budowania pakietu.
+
+```python
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoapps"
+version = "0.1.0"
+requires-python = ">=3.10.0"
+description = "Pakiet z kodem z zajęć"
+authors = [
+    { name = "Jakub Staszel", email = "jstaszel@agh.edu.pl" }
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+exclude = ["docs", "tests"]
+```
+
+## Instalacja pakietu w trybie edytowalnym
+
+Żeby mieć możliwość pracy na lokalnym pakiecie (ale już wersji zdefiniowanej w `pyproject.toml`), wystarczy zainstalować pakiety w trybie edytowalnym za pomocą `pip install -e .` w terminalu. Tworzone zmiany będą widoczne od razu w Pythonie bez konieczności reinstalacji pakietu.
+
+???+ danger "To nie jest jedyna dopuszczalna struktura projektu!"
+
+    Aktualnie `setuptools` wspiera automatyczne przeszukiwanie 2 typów struktur projektów, na tych zajęciach stworzyliśmy `flat-layout`, więcej szczegółów [tutaj](https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#automatic-discovery).
+
+## Zarządzanie zależnościami pakietu
+
+Kiedy budujemy nasz pakiet lokalnie, proces budowy przebiega bez problemów, ponieważ wszystkie zależności są już zainstalowane i dostępne w środowisku. W takim przypadku narzędzia takie jak `build` czy `setuptools` korzystają z tych zależności lokalnie i poprawnie budują paczkę.
+
+Po zbudowaniu pakietu sytuacja się zmienia – użytkownicy, którzy chcą zainstalować nasz pakiet, nie będą mieli automatycznie dostępu do zależności używanych podczas jego budowy. Aby upewnić się, że użytkownicy będą mogli poprawnie zainstalować ten pakiet, konieczne jest jasne określenie jego zależności runtime w pliku konfiguracyjnym projektu.
+
+I tak to np. może wyglądać w pliku `pyproject.toml`:
+
+```python
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "moj_pakiet"
+version = "1.0.0"
+description = "Przykład pakietu"
+dependencies = [
+    "numpy>=1.21.0,<2.0.0",
+    "pandas>=1.3.0",
+]
+```
+
+## Wersjonowanie pakietów
+
+Wersjonowanie to proces przypisywania numeru wersji do konkretnego stanu projektu. Dzięki temu możemy jasno komunikować co się zmieniło, czy wersja jest stabilna oraz czy aktualizacja wpływa na kompatybilność z innymi projektami.
+
+Dobrze prowadzone wersjonowanie pozwala zachować porządek w historii zmian, umożliwić instalację konkretnej wersji (np. do testów) i uniknąć błędów wynikających z nieoczekiwanych zmian w kodzie.
+
+### Konwencja SemVer (Semantic Versioning)
+
+Najczęściej stosowaną konwencją jest [Semantic Versioning](https://semver.org/), czyli:
+
+```bash
+MAJOR.MINOR.PATCH
+```
+
+Szczegóły:
+
+- **MAJOR** (np. 2.0.0) - zmiany niekompatybilne z poprzednimi wersjami (np. usunięcie lub zmiana działania funkcji),
+- **MINOR** (np. 1.3.0) - nowe funkcje, ale kompatybilne z poprzednimi wersjami.
+- **PATCH** (np. 1.3.2) - poprawki błędów, bez dodawania nowych funkcji.
+
+Przykład rozwoju wersji:
+
+- 0.1.0 – wstępna wersja rozwojowa,
+- 0.2.0 – dodano nowe funkcje,
+- 0.2.1 – poprawki błędów,
+- 1.0.0 – pierwsza stabilna wersja,
+- 2.0.0 – duża zmiana, niekompatybilna z 1.x.
+
+## Budowanie pakietu
+
+Budowanie pakietu to process tworzenia dystrybucji kodu, która może być zainstalowana przez innych użytkowników lub na różnych maszynach. W Pythonie używa się narzędzi takich jak `setuptools` i `wheel`, aby stworzyć gotową paczkę w formatach `.whl` (wheel) i `.tar.gz` (source distribution).
+
+Aby zbudować pakiet wystarczy mieć zainstalowany pakiet `build` ([dokumentacja](https://build.pypa.io/en/stable/)), a następnie uruchomić go poprzez `python -m build`.
+
+!!! warning "Paczka zbudowana zostanie w wersji zgodnej z `pyproject.toml`, należy ją wcześniej zaktualizować!"
+
+```python
+pip install build
+python -m build
+```
+
+Pliki powinny zostać stworzone w folderze `dist`:
+
+- `.tar.gz` – klasyczna paczka źródłowa,
+- `.whl` (wheel) – zoptymalizowana binarna paczka do szybkiej instalacji.
+
+???- question "Co to jest `wheel`?"
+
+    Wheel to nowoczesny format paczek dla Pythona (rozszerzenie .whl).
+
+    Zalety:
+    - szybka instalacja bez potrzeby kompilacji,
+    - lepsze wsparcie dla CI/CD i instalacji zależności systemowych,
+    - obsługa zależności i metadanych.
+
+    Instalacja pliku `.whl`:
+
+    ```python
+    pip install <dist>/geoapps-0.1.0-py3-none-any.whl
+    ```
+
+# Publikowanie pakietu
+
+Publikacja pakietu to kluczowy krok w procesie udostępnienia oprogramowania innym użytkownikom, zespołom lub całej społeczności. Udostępniając pakiet, umożliwiamy jego łatwą **instalację, aktualizację i wykorzystanie w innych projektach**. Process publikacji zależy od repozytorium pakietów, na którym chcemy opublikować pakiet, a także od tego, czy nasz pakiet jest przeznaczony do użytku prywatnego, publicznego, czy specjalistycznego.
+
+## Platformy do dystrybucji pakietów
+
+### [PyPI](https://pypi.org/)
+
+Jest domyślną i najczęściej używaną platformą. Pozwala na łatwą instalację pakietów za pomocą `pip` oraz ich aktualizację.
+
+Instalacja dostępnego tam pakietu: `pip install <nazwa_pakietu>`.
+
+### [conda-forge](https://conda-forge.org/)
+
+Platforms do dystrybucji pakietów oparta na systemie Conda, który wspiera pakiety Python i nie tylko. Conda-Forge to społecznościowe repozytorium, które umożliwia tworzenie i publikowanie pakietów w szerokiej gamie języków programowania.
+
+Instalacja dostępnego tam pakietu: `conda install -c conda-forge <nazwa_pakietu>`.
+
+Wymaga Conda do zarządzania.
+
+### [GitHub Packages](https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages)
+
+Platforms dystrybucji zintegrowana bezpośrednio z GitHub, co umożliwia publikację pakietów obok kodu źródłowego i integrację z GitHub Actions.
+
+Instalacja dostępnego tam pakietu: w zależności od konfiguracji `pip install` lub `conda install`.
+
+### Inne
+
+- Anaconda Cloud
+- Artifactory
+- PyPI Pro
+- Docker Hub
+
+## Publikowanie pakietu
+
+Pracujemy już z GitHub, więc tam opublikujemy zbudowaną wcześniej paczkę (jako przykład).
+
+### Manualnie
+
+!!! danger "Proszę nie uruchamiać tych komend, poniżej przedstawione jest automatyczne podejście, które zastosujemy!"
+
+```bash
+git commit -m "Release v0.2.0"
+git tag v0.2.0
+git push origin main --tags
+```
+
+Po tym możemy także stworzyć release w GitHub UI, poprzez zakładkę Releases.
+
+### Automatycznie
+
+Chcemy, żeby każdy PR do głównej gałęzi budował pakiet i publikował jego artefakty do pobrania. Zrobimy to za pomocą GitHub Actions, szczegóły można zobaczyć w pliku `./.github/workflows/build.yml`.

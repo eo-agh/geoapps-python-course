@@ -83,3 +83,6 @@ nav:
     - 🤖 Wyjątki: zaj05/wyjatki.md
     - 🤖 Menadżery kontekstu: zaj05/menadzery_kontekstu.md
     - 🤖 Dekoratory: zaj05/dekoratory.md
+  - Środowiska wirtualne:
+    - 🧪 Wstęp: zaj06/srodowiska_wirtualne.md
+    - 🧪 Mamba i conda-lock: zaj06/mamba_condalock.md

@@ -1,0 +1,2404 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../zasiegi/">
+      
+      
+        <link rel="next" href="../dokumentacja/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>🧰 Pakiety - Programowanie aplikacji geoinformatycznych (Python)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#wstep" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Programowanie aplikacji geoinformatycznych (Python)" class="md-header__button md-logo" aria-label="Programowanie aplikacji geoinformatycznych (Python)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Programowanie aplikacji geoinformatycznych (Python)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              🧰 Pakiety
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="black" data-md-color-accent="indigo"  aria-label="Switch to system preference"  type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5M7 15a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eo-agh/geoapps-python-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Programowanie aplikacji geoinformatycznych (Python)" class="md-nav__button md-logo" aria-label="Programowanie aplikacji geoinformatycznych (Python)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Programowanie aplikacji geoinformatycznych (Python)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eo-agh/geoapps-python-course" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Strona główna
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Podstawy programowania
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Podstawy programowania
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj0/srod-lok/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    👽 Środowisko lokalne
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/git/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞 GIT - kontrola wersji
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Podstawy Pythona
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Podstawy Pythona
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/moduly_przestrzenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞 Moduły i przestrzenie nazw
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/typy_wbudowane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞 Podstawowe typy wbudowane
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/niespodziewane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞 Niespodziewane zachowania
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/instrukcje_petle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞 Instrukcje warunkowe i pętle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/praca_z_plikami/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞 Praca z plikami
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj01/zadania_sprawdzajace/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🌞📝 Zadanie sprawdzające
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/przypisania/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Przypisania
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pętle
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Pętle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/petle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Wstęp - pętle
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/listy_skladane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Listy składane
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/iteratory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Iteratory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Funkcje
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Funkcje
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/funkcje/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Wstęp - funkcje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/lambda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Funkcje anonimowe - lambda
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj02/generatory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ❄️ Generatory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Programowanie obiektowe
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Programowanie obiektowe
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/klasy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Wstęp - klasy i instancje
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/obiektowe_poco/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Po co programować obiektowo?
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/dziedziczenie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Dziedziczenie
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/przeciazanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Przeciążanie operatorów
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/przyklad/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕📝 Zadanie - przykład
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/introspekcja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Narzędzia introspekcji
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/abstrakcyjne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Abstrakcyjne klasy nadrzędne
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/pseudoprywatne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Atrybuty pseudoprywatne
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/wbudowane/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Rozszerzanie typów wbudowanych
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/sloty/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Sloty
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/metody/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕 Rodzaje metod
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj03/zadania/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🥕📝 Zadania
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pakiety
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Pakiety
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nazewnictwo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧰 Konwencja nazewnictwa
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zasiegi/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧰 Zasięgi
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    🧰 Pakiety
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧰 Pakiety
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wstęp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przygotowanie-struktury-projektu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Przygotowanie struktury projektu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Przygotowanie struktury projektu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wprowadzenie-do-pakietow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wprowadzenie do pakietów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pliki-__init__py" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pliki __init__.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importowanie-moduow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importowanie modułów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Zadania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budowanie-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budowanie pakietu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Budowanie pakietu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plik-konfiguracyjny-pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plik konfiguracyjny pyproject.toml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacja-pakietu-w-trybie-edytowalnym" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalacja pakietu w trybie edytowalnym
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zarzadzanie-zaleznosciami-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zarządzanie zależnościami pakietu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wersjonowanie-pakietow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wersjonowanie pakietów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wersjonowanie pakietów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konwencja-semver-semantic-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konwencja SemVer (Semantic Versioning)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budowanie-pakietu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budowanie pakietu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publikowanie-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publikowanie pakietu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publikowanie pakietu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platformy-do-dystrybucji-pakietow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platformy do dystrybucji pakietów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platformy do dystrybucji pakietów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pypi" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyPI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-forge" class="md-nav__link">
+    <span class="md-ellipsis">
+      conda-forge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inne
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publikowanie-pakietu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publikowanie pakietu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publikowanie pakietu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manualnie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manualnie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatycznie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatycznie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wykorzystanie-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wykorzystanie pakietu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadania_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Zadania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dokumentacja/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧰 Prowadzenie dokumentacji
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Pozostałe elemnty języka
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Pozostałe elemnty języka
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj05/wyjatki/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🤖 Wyjątki
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj05/menadzery_kontekstu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🤖 Menadżery kontekstu
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj05/dekoratory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🤖 Dekoratory
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Środowiska wirtualne
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            Środowiska wirtualne
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj06/srodowiska_wirtualne/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧪 Wstęp
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../zaj06/mamba_condalock/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    🧪 Mamba i conda-lock
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#wstep" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wstęp
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#przygotowanie-struktury-projektu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Przygotowanie struktury projektu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Przygotowanie struktury projektu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wprowadzenie-do-pakietow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wprowadzenie do pakietów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pliki-__init__py" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pliki __init__.py
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#importowanie-moduow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Importowanie modułów
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadania" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Zadania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#budowanie-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budowanie pakietu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Budowanie pakietu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plik-konfiguracyjny-pyprojecttoml" class="md-nav__link">
+    <span class="md-ellipsis">
+      Plik konfiguracyjny pyproject.toml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#instalacja-pakietu-w-trybie-edytowalnym" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instalacja pakietu w trybie edytowalnym
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zarzadzanie-zaleznosciami-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zarządzanie zależnościami pakietu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wersjonowanie-pakietow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wersjonowanie pakietów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Wersjonowanie pakietów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#konwencja-semver-semantic-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konwencja SemVer (Semantic Versioning)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#budowanie-pakietu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Budowanie pakietu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#publikowanie-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publikowanie pakietu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publikowanie pakietu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#platformy-do-dystrybucji-pakietow" class="md-nav__link">
+    <span class="md-ellipsis">
+      Platformy do dystrybucji pakietów
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Platformy do dystrybucji pakietów">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#pypi" class="md-nav__link">
+    <span class="md-ellipsis">
+      PyPI
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conda-forge" class="md-nav__link">
+    <span class="md-ellipsis">
+      conda-forge
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-packages" class="md-nav__link">
+    <span class="md-ellipsis">
+      GitHub Packages
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Inne
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#publikowanie-pakietu_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Publikowanie pakietu
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Publikowanie pakietu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manualnie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manualnie
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#automatycznie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Automatycznie
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wykorzystanie-pakietu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Wykorzystanie pakietu
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#zadania_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      📝 Zadania
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h2 id="wstep">Wstęp</h2>
+<details class="- note">
+<summary>PRZYPOMNIENIE - czym jest moduł?</summary>
+<p>Moduł w Pythonie to plik z rozszerzeniem <code>.py</code>, który zawiera kod – może to być pojedyncza funkcja, klasa, a nawet cały zestaw narzędzi. Moduły pozwalają nam na przechowywanie kodu w osobnych plikach i łatwe jego importowanie oraz używanie w innych miejscach.</p>
+</details>
+<p>Kiedy używamy instrukcji <code>import</code>, Python próbuje znaleźć odpowiedni moduł w określonych lokalizacjach, które są przechowywane w zmiennej <code>sys.path</code>. Lista tych ścieżek obejmuje:</p>
+<ul>
+<li>Bieżący katalog roboczy – katalog, z którego uruchamiamy skrypt.</li>
+<li>Katalogi standardowe Pythona – ścieżki z bibliotekami standardowymi.</li>
+<li>Katalogi specyficzne dla instalacji – katalogi, które mogą zawierać dodatkowe moduły lub pakiety, np. zainstalowane za pomocą <code>pip</code>.</li>
+</ul>
+<p>U siebie możemy to zobaczyć używając:</p>
+<div class="highlight"><pre><span></span><code><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="p">)</span>
+</code></pre></div>
+<h1 id="przygotowanie-struktury-projektu">Przygotowanie struktury projektu</h1>
+<h2 id="wprowadzenie-do-pakietow">Wprowadzenie do pakietów</h2>
+<p>Pakiet w Pythonie to katalog (<strong>folder</strong>) zawierający moduły. Pakiety pozwalają na hierarchiczne organizowanie kodu, co jest szczególnie użyteczne w większych projektach. <strong>Każdy pakiet jest katalogiem</strong>, który powinien zawierać plik <strong><code>__init__.py</code></strong>, aby Python mógł go rozpoznać jako pakiet.</p>
+<p>Pakiety mogą być zagnieżdżane w innych pakietach, tworząc strukturę drzewiastą. Przykładowa struktura pakietu <code>geoapps</code> mogłaby wyglądać tak:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">nasz-projekt</span><span class="o">/</span>
+<span class="err">├──</span><span class="w"> </span><span class="nt">geoapps</span><span class="o">/</span>
+<span class="err">│</span><span class="w">   </span><span class="err">├──</span><span class="w"> </span><span class="nt">__init__</span><span class="p">.</span><span class="nc">py</span>
+<span class="err">│</span><span class="w">   </span><span class="err">└──</span><span class="w"> </span><span class="nt">zajecia01</span><span class="o">/</span>
+<span class="err">│</span><span class="w">          </span><span class="err">├──</span><span class="w"> </span><span class="nt">__init__</span><span class="p">.</span><span class="nc">py</span>
+<span class="err">│</span><span class="w">          </span><span class="err">├──</span><span class="w"> </span><span class="nt">dodawanie</span><span class="p">.</span><span class="nc">py</span>
+<span class="err">│</span><span class="w">          </span><span class="err">├──</span><span class="w"> </span><span class="nt">odejmowanie</span><span class="p">.</span><span class="nc">py</span>
+<span class="err">│</span><span class="w">          </span><span class="err">└──</span><span class="w"> </span><span class="nt">dzielenie</span><span class="p">.</span><span class="nc">py</span>
+<span class="err">├──</span><span class="w"> </span><span class="nt">docs</span><span class="o">/</span>
+<span class="err">└──</span><span class="w"> </span><span class="nt">tests</span><span class="o">/</span>
+</code></pre></div>
+<h2 id="pliki-__init__py">Pliki <code>__init__.py</code></h2>
+<p>Jak widzimy w przykładowej strukturze powyżej, każdy katalog, który ma być rozpoznawany jako część pakietu, posiada ten plik. Początkowo, w starszych wersjach Pythona, ten plik był obowiązkowy; obecnie w Pythonie 3.x nadal jest używany, ale jego obecność nie jest wymagana do rozpoznania katalogu jako pakietu. Jednak <code>__init__.py</code> nadal ma ważne funkcje:</p>
+<ul>
+<li><strong>Inicjalizacja pakietu</strong> – plik <code>__init__.py</code> jest uruchamiany przy pierwszym importowaniu pakietu, więc można w nim umieścić kod, który zostanie wykonany na początku.</li>
+<li><strong>Kontrolowanie importów</strong> – możemy zdefiniować listę <code>__all__</code> w <code>__init__.py</code>, aby kontrolować, które moduły zostaną zaimportowane, gdy użyjemy <code>from pakiet import *</code>.</li>
+</ul>
+<p>Przykładowy plik <code>__init__.py</code> znajdujący się w <code>zajęcia01</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;dodawanie&quot;</span><span class="p">,</span> <span class="s2">&quot;odejmowanie&quot;</span><span class="p">]</span>
+</code></pre></div>
+<p>Dzięki temu przy <code>from zajecia01 import *</code> zostaną zaimportowane tylko moduły <code>dodawanie</code> i <code>odejmowanie</code>, podczas gdy <code>dzielenie</code> zostanie pominięte.</p>
+<h2 id="importowanie-moduow">Importowanie modułów</h2>
+<p>Mamy 2 główne typy importu:</p>
+<ul>
+<li><strong>Import bezwzględny</strong> – polega na podaniu pełnej ścieżki do modułu lub pakietu, np.:<ul>
+<li><code>from geoapps import *</code>,</li>
+<li><code>from geoapps.zajecia01 import dodawanie</code>,</li>
+<li><code>from geoapps.zajecia01.dodawanie import suma</code>,</li>
+<li><code>import geoapps.zajecia01.dodawanie as dod</code>.</li>
+</ul>
+</li>
+<li><strong>Import względny</strong> – używany jest wewnątrz pakietów i bazuje na kropkach wiodących:<ul>
+<li>Jedna kropka <code>.</code> oznacza bieżący pakiet.</li>
+<li>Dwie kropki <code>..</code> oznaczają pakiet nadrzędny.</li>
+</ul>
+</li>
+</ul>
+<details class="danger" open="open">
+<summary>Danger</summary>
+<p><strong>Import względny działa tylko wtedy, gdy jesteśmy w kontekście pakietu, np. podczas importowania modułów wewnątrz innego modułu tego samego pakietu.</strong></p>
+</details>
+<details class="-">
+<summary>Przykład - importowanie bezwzględne</summary>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">geoapps.zajecia01</span><span class="w"> </span><span class="kn">import</span> <span class="n">dodawanie</span><span class="p">,</span> <span class="n">odejmowanie</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">dodawanie</span><span class="o">.</span><span class="n">dodaj</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Użycie funkcji dodaj z modułu dodawanie</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">odejmowanie</span><span class="o">.</span><span class="n">odejmij</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>  <span class="c1"># Użycie funkcji odejmij z modułu odejmowanie</span>
+</code></pre></div>
+</details>
+<details class="-">
+<summary>Przykład - importowanie względne - WEWNĄTRZ PAKIETU</summary>
+<p>Będąc w pliku <code>zajecia01/mnozenie.py</code></p>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span><span class="w"> </span><span class="nn">.dodawanie</span><span class="w"> </span><span class="kn">import</span> <span class="n">dodaj</span>  <span class="c1"># Import z bieżącego pakietu</span>
+
+<span class="k">def</span><span class="w"> </span><span class="nf">mnoz</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">wynik</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+        <span class="n">wynik</span> <span class="o">=</span> <span class="n">dodaj</span><span class="p">(</span><span class="n">wynik</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>  <span class="c1"># Użycie funkcji dodaj</span>
+    <span class="k">return</span> <span class="n">wynik</span>
+</code></pre></div>
+</details>
+<h2 id="zadania">📝 Zadania</h2>
+<ol>
+<li>
+<p>Stwórz strukturę pakietu <code>geoapps</code> i przenieś do niego stworzone do tej pory skrypty (z wszystkich zajęć). Można użyć struktury z przykładu, czyli subpakiety odpowiadające konkretnym zajęciom np. <code>zajecia01</code>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Nie zapomnij dodać plików <code>__init__.py</code> wewnątrz pakietów, a także opcjonalnie list <code>__all__</code> w tych plikach.</p>
+</div>
+</li>
+<li>
+<p>Wykorzystując pakiet <code>geoapps</code>, stwórz w głównym katalogu plik <code>run_geoapps.py</code>, zaimportuj do niego wybrane funkcje / klasy i wywołaj przykładowy kod z ich użyciem.</p>
+</li>
+</ol>
+<h1 id="budowanie-pakietu">Budowanie pakietu</h1>
+<h2 id="plik-konfiguracyjny-pyprojecttoml">Plik konfiguracyjny <code>pyproject.toml</code></h2>
+<p>Plik <code>pyproject.toml</code> to centralne miejsce konfiguracji pakietu. Od 2020 roku jest to zalecany (i standardowy) format dla wszystkich narzędzi do budowania pakietów (zgodnie z PEP 517/518/621). Pozwala narzędziom jak <code>pip</code>, <code>build</code>, <code>twine</code> itp. rozpoznać, jak zbudować i zainstalować pakiet.</p>
+<details class="- note">
+<summary>Czy można używać czegoś innego niż <code>pyproject.toml</code>?</summary>
+<p>Tradycyjnie używano pliku <code>setup.py</code>, a następnie dodano <code>setup.cfg</code> jako opcję konfiguracji bezpośredniej w formacie <code>.ini</code>. Obecnie, możliwa jest konfiguracja pakietów wyłącznie za pomocą <code>pyproject.toml</code>, który upraszcza zarządzanie projektami w całym ekosystemie.</p>
+<p>W najnowszych wersjach <code>setuptools</code> wystarczy plik <code>pyproject.toml</code>, w poprzednich mogą być wymagane inne / pozostałe.</p>
+<p>Więcej szczegółów w dokumentacji <a href="https://setuptools.pypa.io/en/latest/index.html">setuptools</a>.</p>
+</details>
+<p>Plik <code>pyproject.toml</code> powinien się znaleźć w głównym katalogu projektu.</p>
+<p><strong>Zawartość <code>pyproject.toml</code></strong> - przechowuje szczegółowe informacje o projekcie, takie jak nazwa, wersja, autor oraz wymagania dla systemu budowania pakietu.</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span> <span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="p">[</span><span class="n">project</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;geoapps&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;0.1.0&quot;</span>
+<span class="n">requires</span><span class="o">-</span><span class="n">python</span> <span class="o">=</span> <span class="s2">&quot;&gt;=3.10.0&quot;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Pakiet z kodem z zajęć&quot;</span>
+<span class="n">authors</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Jakub Staszel&quot;</span><span class="p">,</span> <span class="n">email</span> <span class="o">=</span> <span class="s2">&quot;jstaszel@agh.edu.pl&quot;</span> <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="p">[</span><span class="n">tool</span><span class="o">.</span><span class="n">setuptools</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">find</span><span class="p">]</span>
+<span class="n">where</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;.&quot;</span><span class="p">]</span>
+<span class="n">exclude</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;docs&quot;</span><span class="p">,</span> <span class="s2">&quot;tests&quot;</span><span class="p">]</span>
+</code></pre></div>
+<h2 id="instalacja-pakietu-w-trybie-edytowalnym">Instalacja pakietu w trybie edytowalnym</h2>
+<p>Żeby mieć możliwość pracy na lokalnym pakiecie (ale już wersji zdefiniowanej w <code>pyproject.toml</code> oraz bez uzależnienia od <code>sys.path</code>), wystarczy zainstalować pakiet w trybie edytowalnym za pomocą <code>pip install -e .</code> w terminalu. Tworzone zmiany będą widoczne od razu w Pythonie bez konieczności reinstalacji pakietu.</p>
+<details class="danger" open="open">
+<summary>To nie jest jedyna dopuszczalna struktura projektu!</summary>
+<p>Aktualnie <code>setuptools</code> wspiera automatyczne przeszukiwanie 2 typów struktur projektów, na tych zajęciach stworzyliśmy <code>flat-layout</code>, więcej szczegółów <a href="https://setuptools.pypa.io/en/latest/userguide/package_discovery.html#automatic-discovery">tutaj</a>.</p>
+</details>
+<h2 id="zarzadzanie-zaleznosciami-pakietu">Zarządzanie zależnościami pakietu</h2>
+<p>Kiedy budujemy nasz pakiet lokalnie, proces budowy przebiega bez problemów, ponieważ wszystkie zależności są już zainstalowane i dostępne w środowisku. W takim przypadku narzędzia takie jak <code>build</code> czy <code>setuptools</code> korzystają z tych zależności lokalnie i poprawnie budują paczkę.</p>
+<p>Po zbudowaniu pakietu sytuacja się zmienia – użytkownicy, którzy chcą zainstalować nasz pakiet, nie będą mieli automatycznie dostępu do zależności używanych podczas jego budowy. Aby upewnić się, że użytkownicy będą mogli poprawnie zainstalować ten pakiet, konieczne jest jasne określenie jego zależności runtime w pliku konfiguracyjnym projektu.</p>
+<p>I tak to np. może wyglądać w pliku <code>pyproject.toml</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">build</span><span class="o">-</span><span class="n">system</span><span class="p">]</span>
+<span class="n">requires</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;setuptools&quot;</span><span class="p">,</span> <span class="s2">&quot;wheel&quot;</span><span class="p">]</span>
+<span class="n">build</span><span class="o">-</span><span class="n">backend</span> <span class="o">=</span> <span class="s2">&quot;setuptools.build_meta&quot;</span>
+
+<span class="p">[</span><span class="n">project</span><span class="p">]</span>
+<span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;moj_pakiet&quot;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s2">&quot;1.0.0&quot;</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Przykład pakietu&quot;</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;numpy&gt;=1.21.0,&lt;2.0.0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;pandas&gt;=1.3.0&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+</code></pre></div>
+<h2 id="wersjonowanie-pakietow">Wersjonowanie pakietów</h2>
+<p>Wersjonowanie to proces przypisywania numeru wersji do konkretnego stanu projektu. Dzięki temu możemy jasno komunikować co się zmieniło, czy wersja jest stabilna oraz czy aktualizacja wpływa na kompatybilność z innymi projektami.</p>
+<p>Dobrze prowadzone wersjonowanie pozwala zachować porządek w historii zmian, umożliwić instalację konkretnej wersji (np. do testów) i uniknąć błędów wynikających z nieoczekiwanych zmian w kodzie.</p>
+<h3 id="konwencja-semver-semantic-versioning">Konwencja SemVer (Semantic Versioning)</h3>
+<p>Najczęściej stosowaną konwencją jest <a href="https://semver.org/">Semantic Versioning</a>, czyli:</p>
+<div class="highlight"><pre><span></span><code>MAJOR.MINOR.PATCH
+</code></pre></div>
+<p>Szczegóły:</p>
+<ul>
+<li><strong>MAJOR</strong> (np. 2.0.0) - zmiany niekompatybilne z poprzednimi wersjami (np. usunięcie lub zmiana działania funkcji),</li>
+<li><strong>MINOR</strong> (np. 1.3.0) - nowe funkcje, ale kompatybilne z poprzednimi wersjami.</li>
+<li><strong>PATCH</strong> (np. 1.3.2) - poprawki błędów, bez dodawania nowych funkcji.</li>
+</ul>
+<p>Przykład rozwoju wersji:</p>
+<ul>
+<li>0.1.0 – wstępna wersja rozwojowa,</li>
+<li>0.2.0 – dodano nowe funkcje,</li>
+<li>0.2.1 – poprawki błędów,</li>
+<li>1.0.0 – pierwsza stabilna wersja,</li>
+<li>2.0.0 – duża zmiana, niekompatybilna z 1.x.</li>
+</ul>
+<h2 id="budowanie-pakietu_1">Budowanie pakietu</h2>
+<p>Budowanie pakietu to process tworzenia dystrybucji kodu, która może być zainstalowana przez innych użytkowników lub na różnych maszynach. W Pythonie używa się narzędzi takich jak <code>setuptools</code> i <code>wheel</code>, aby stworzyć gotową paczkę w formatach <code>.whl</code> (wheel) i <code>.tar.gz</code> (source distribution).</p>
+<p>Aby zbudować pakiet wystarczy mieć zainstalowany pakiet <code>build</code> (<a href="https://build.pypa.io/en/stable/">dokumentacja</a>), a następnie uruchomić go poprzez <code>python -m build</code>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Paczka zbudowana zostanie w wersji zgodnej z <code>pyproject.toml</code>, należy najpierw zaktualizować ten plik!</p>
+</div>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">build</span>
+<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">build</span>
+</code></pre></div>
+<p>Pliki powinny zostać stworzone w folderze <code>dist</code>:</p>
+<ul>
+<li><code>.tar.gz</code> – klasyczna paczka źródłowa,</li>
+<li><code>.whl</code> (wheel) – zoptymalizowana binarna paczka do szybkiej instalacji.</li>
+</ul>
+<details class="- question">
+<summary>Co to jest <code>wheel</code>?</summary>
+<p>Wheel to nowoczesny format paczek dla Pythona (rozszerzenie .whl).</p>
+<p>Zalety:
+- szybka instalacja bez potrzeby kompilacji,
+- lepsze wsparcie dla CI/CD i instalacji zależności systemowych,
+- obsługa zależności i metadanych.</p>
+<p>Instalacja pliku <code>.whl</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="o">&lt;</span><span class="n">dist</span><span class="o">&gt;/</span><span class="n">geoapps</span><span class="o">-</span><span class="mf">0.1.0</span><span class="o">-</span><span class="n">py3</span><span class="o">-</span><span class="n">none</span><span class="o">-</span><span class="nb">any</span><span class="o">.</span><span class="n">whl</span>
+</code></pre></div>
+</details>
+<h1 id="publikowanie-pakietu">Publikowanie pakietu</h1>
+<p>Publikacja pakietu to kluczowy krok w procesie udostępnienia oprogramowania innym użytkownikom, zespołom lub całej społeczności. Udostępniając pakiet, umożliwiamy jego łatwą <strong>instalację, aktualizację i wykorzystanie w innych projektach</strong>. Process publikacji zależy od repozytorium pakietów, na którym chcemy opublikować pakiet, a także od tego, czy nasz pakiet jest przeznaczony do użytku prywatnego, publicznego, czy specjalistycznego.</p>
+<h2 id="platformy-do-dystrybucji-pakietow">Platformy do dystrybucji pakietów</h2>
+<h3 id="pypi"><a href="https://pypi.org/">PyPI</a></h3>
+<p>Jest domyślną i najczęściej używaną platformą. Pozwala na łatwą instalację pakietów za pomocą <code>pip</code> oraz ich aktualizację.</p>
+<p>Instalacja dostępnego tam pakietu: <code>pip install &lt;nazwa_pakietu&gt;</code>.</p>
+<h3 id="conda-forge"><a href="https://conda-forge.org/">conda-forge</a></h3>
+<p>Platforms do dystrybucji pakietów oparta na systemie Conda, który wspiera pakiety Python i nie tylko. Conda-Forge to społecznościowe repozytorium, które umożliwia tworzenie i publikowanie pakietów w szerokiej gamie języków programowania.</p>
+<p>Instalacja dostępnego tam pakietu: <code>conda install -c conda-forge &lt;nazwa_pakietu&gt;</code>.</p>
+<p>Wymaga Conda do zarządzania.</p>
+<h3 id="github-packages"><a href="https://docs.github.com/en/packages/learn-github-packages/introduction-to-github-packages">GitHub Packages</a></h3>
+<p>Platforms dystrybucji zintegrowana bezpośrednio z GitHub, co umożliwia publikację pakietów obok kodu źródłowego i integrację z GitHub Actions.</p>
+<p>Instalacja dostępnego tam pakietu: w zależności od konfiguracji <code>pip install</code> lub <code>conda install</code>.</p>
+<h3 id="inne">Inne</h3>
+<ul>
+<li>Anaconda Cloud</li>
+<li>Artifactory</li>
+<li>PyPI Pro</li>
+<li>Docker Hub</li>
+</ul>
+<h2 id="publikowanie-pakietu_1">Publikowanie pakietu</h2>
+<p>Na przykładzie GitHub. Zakładając, że wszystkie nasze zmiany, które mają być częścią opublikowanej wersji są już na głównej gałęzi, pozostaje nam dodanie taga:</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># tagi chcemy dodawać na głównej gałęzi</span>
+git<span class="w"> </span>checkout<span class="w"> </span>main
+git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>main
+
+<span class="c1"># dodanie taga zgodnego z wersją w pyproject.toml</span>
+git<span class="w"> </span>tag<span class="w"> </span>v0.1.0
+git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>v0.1.0
+</code></pre></div>
+<details class="- question">
+<summary>Czym są <code>git tags</code>?</summary>
+<p>Git tagi to specjalne "etykiety" przypinane do konkretnych commitów, najczęściej służące do oznaczania wersji projektu (np. v1.0.0, v2.1.3). W odróżnieniu od branchy, tagi są niezmienne – raz przypisane do commita, pozostają z nim związane na stałe (chyba że zostaną usunięte i utworzone ponownie). Tagi są kluczowe w cyklu wydawniczym: pozwalają budować i publikować wersje paczek, tworzyć release’y na GitHubie, a także odtwarzać stan repozytorium z momentu konkretnego wydania. Oprócz wersjonowania, tagów można używać również do: oznaczania ważnych punktów w historii (np. "pierwsza wersja prototypu"), tworzenia snapshotów do analizy, czy wskazywania milestone’ów w pracy zespołowej. Są lekkie, czytelne i dobrze wspierane przez narzędzia CI/CD.</p>
+</details>
+<h3 id="manualnie">Manualnie</h3>
+<div class="admonition danger">
+<p class="admonition-title">Tego nie robimy, wykonamy zautomatyzowaną wersję!</p>
+</div>
+<p>Opublikować pakiety możemy za pomocą release w GitHub UI, poprzez zakładkę Releases. To narzędzie zadba o zbudowanie plików dla paczki.</p>
+<h3 id="automatycznie">Automatycznie</h3>
+<p>Za pomocą workflow w GitHub Actions <code>./.github/workflows/release.yml</code> wykonujemy wszystkie kroki, czyli zbudowanie pakietu oraz opublikowanie.</p>
+<p>Po tym, po wejściu na repozytorium zdalne, powinniśmy widzieć status workflow oraz gotowy release.</p>
+<p><img alt="Informacje o workflow i release" src="../../assets/images/release.png" /></p>
+<h2 id="wykorzystanie-pakietu">Wykorzystanie pakietu</h2>
+<p>Teraz inni użytkownicy będą mogli korzystać z konkretnych wersji pakietu. W przypadku GitHub, za pomocą komendy:</p>
+<div class="highlight"><pre><span></span><code>pip<span class="w"> </span>install<span class="w"> </span>https://github.com/eo-agh/geoapps-python-course/releases/download/v0.1.0/geoapps-0.1.0-py3-none-any.whl
+</code></pre></div>
+<p>Oraz odpowiednio innych dla PyPI czy conda-forge (w zależności od tego gdzie publikujemy pakiet).</p>
+<h2 id="zadania_1">📝 Zadania</h2>
+<ol>
+<li>Stwórz w głównym katalogu projektu plik <code>pyproject.toml</code> i wypełnij go odpowiednią treścią używając dokumentacji i przykładu konfiguracji.</li>
+<li>Zainstaluj swój zdefiniowany pakiet w trybie edytowalnym (<code>pip install -e .</code>).</li>
+<li>Opublikuj pierwszą wersję pakietu w GitHub Packages w sposób zautomatyzowany.</li>
+</ol>
+<details class="warning" open="open">
+<summary>Uwaga</summary>
+<p>Po zainstalowaniu pakietu w wersji edytowalnej powinniśmy mieć możliwość importowania za pomocą <code>from geoapps import *</code> w sposób bezwzględny, czyli bez względu na lokalizację skryptu. Można to przetestować przenosząć tymczasowo <code>main_zajecia03.py</code> do folderu <code>tests</code>.</p>
+</details>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright 2024 Jakub Staszel KGiIS AGH
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections", "content.code.copy"], "search": "../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

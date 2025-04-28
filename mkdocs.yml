@@ -74,7 +74,7 @@ nav:
     - 🥕 Sloty: zaj03/sloty.md
     - 🥕 Rodzaje metod: zaj03/metody.md
     - 🥕📝 Zadania: zaj03/zadania.md
-  - Pakiety: 
+  - Pakiety:
     - 🧰 Konwencja nazewnictwa: zaj04/nazewnictwo.md
     - 🧰 Zasięgi: zaj04/zasiegi.md
     - 🧰 Pakiety: zaj04/pakiety.md
@@ -86,3 +86,10 @@ nav:
   - Środowiska wirtualne:
     - 🧪 Wstęp: zaj06/srodowiska_wirtualne.md
     - 🧪 Mamba i conda-lock: zaj06/mamba_condalock.md
+  - Inżynieria oprogramowania:
+    - 🛠️ Logowanie: zaj07/logowanie.md
+    - 🛠️ Testy: zaj07/testy.md
+    - 🛠️ CLI: zaj07/cli.md
+    - 🛠️ make: zaj07/make.md
+    - 🛠️ Formatowanie i analiza kodu: zaj07/formatowanie.md
+    - 🛠️ pre-commit: zaj07/precommit.md

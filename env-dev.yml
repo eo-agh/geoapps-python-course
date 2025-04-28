@@ -12,3 +12,5 @@ dependencies:
   - jupyter
   - ipykernel
   - pytest
+  - ruff
+  - pre-commit
